@@ -12,8 +12,5 @@ Route::view('/contacts', 'website.pages.contacts')->name('contacts');
 Route::view('/carts', 'website.pages.carts')->name('carts');
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
-});
 
 require __DIR__ . '/settings.php';
