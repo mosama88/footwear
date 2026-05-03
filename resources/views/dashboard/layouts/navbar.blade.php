@@ -37,6 +37,50 @@
                          </div>
                      </li>
 
+
+
+                     <!--begin::User Menu Dropdown-->
+
+                     <li class="nav-item dropdown user-menu">
+                         <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown">
+                             <img src="{{ asset('admin') }}/assets/dist/img/avatar5.png"
+                                 class="user-image rounded-circle shadow" alt="User Image" />
+                             <span class="d-none d-md-inline">{{ auth()->user()->name }}</span>
+                         </a>
+                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                             <!--begin::User Image-->
+                             <li class="user-header" style="background-color:#115989">
+                                 <img src="{{ asset('admin') }}/assets/dist/img/avatar5.png"
+                                     class="rounded-circle shadow" alt="User Image" />
+
+                                 <p class="text-light">
+                                     {{ auth()->user()->name }} - {{ auth()->user()->username }}
+                                 </p>
+                             </li>
+                             <!--end::User Image-->
+
+                             <!--begin::Menu Footer-->
+                             <li class="user-footer text-center">
+                                 <a href="#" class="btn btn-default btn-flat"><i class="fa-solid fa-user"></i>
+                                     Profile</a>
+
+                                 <button type="submit" class="btn btn-default btn-flat float-end" form="logoutForm">
+                                     <span class="mb-0 d-inline-block me-1"><i
+                                             class="fa-solid fa-right-from-bracket"></i></span>
+                                     Logout
+                                 </button>
+
+                                 <form id="logoutForm" action="#" method="POST" style="display:none;">
+                                     @csrf
+                                 </form>
+                             </li>
+                             <!--end::Menu Footer-->
+                         </ul>
+                     </li>
+
+                     <!-- End User Profile-->
+
+
                      <!-- Messages Dropdown Menu -->
                      <li class="nav-item dropdown">
                          <a class="nav-link" data-toggle="dropdown" href="#">
@@ -83,8 +127,8 @@
                              <a href="#" class="dropdown-item">
                                  <!-- Message Start -->
                                  <div class="media">
-                                     <img src="{{ asset('admin') }}/assets/dist/img/user3-128x128.jpg" alt="User Avatar"
-                                         class="img-size-50 img-circle mr-3">
+                                     <img src="{{ asset('admin') }}/assets/dist/img/user3-128x128.jpg"
+                                         alt="User Avatar" class="img-size-50 img-circle mr-3">
                                      <div class="media-body">
                                          <h3 class="dropdown-item-title">
                                              Nora Silvester
@@ -92,7 +136,8 @@
                                                      class="fas fa-star"></i></span>
                                          </h3>
                                          <p class="text-sm">The subject goes here</p>
-                                         <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                         <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago
+                                         </p>
                                      </div>
                                  </div>
                                  <!-- Message End -->
@@ -101,33 +146,18 @@
                              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                          </div>
                      </li>
+
+
+
+
+
+
+
+
                      <!-- Notifications Dropdown Menu -->
-                     <li class="nav-item dropdown">
-                         <a class="nav-link" data-toggle="dropdown" href="#">
-                             <i class="far fa-bell"></i>
-                             <span class="badge badge-warning navbar-badge">15</span>
-                         </a>
-                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                             <span class="dropdown-item dropdown-header">15 Notifications</span>
-                             <div class="dropdown-divider"></div>
-                             <a href="#" class="dropdown-item">
-                                 <i class="fas fa-envelope mr-2"></i> 4 new messages
-                                 <span class="float-right text-muted text-sm">3 mins</span>
-                             </a>
-                             <div class="dropdown-divider"></div>
-                             <a href="#" class="dropdown-item">
-                                 <i class="fas fa-users mr-2"></i> 8 friend requests
-                                 <span class="float-right text-muted text-sm">12 hours</span>
-                             </a>
-                             <div class="dropdown-divider"></div>
-                             <a href="#" class="dropdown-item">
-                                 <i class="fas fa-file mr-2"></i> 3 new reports
-                                 <span class="float-right text-muted text-sm">2 days</span>
-                             </a>
-                             <div class="dropdown-divider"></div>
-                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                         </div>
-                     </li>
+
+
+
                      <li class="nav-item">
                          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                              <i class="fas fa-expand-arrows-alt"></i>

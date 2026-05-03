@@ -7,4 +7,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('/', 'dashboard.index')->name('dashboard');
 });
 
-// require __DIR__ . '/settings.php';
+
+Route::post('login',[])->name('dashboard.login');
