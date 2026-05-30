@@ -32,7 +32,7 @@ class FortifyServiceProvider extends ServiceProvider
 
 
         Fortify::loginView(function () {
-            return view('dashboard.auth.login');
+            return view('pages.auth.login');
         });
     }
 

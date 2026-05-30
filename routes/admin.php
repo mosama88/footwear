@@ -8,4 +8,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-Route::post('login',[])->name('dashboard.login');
+// Route::post('login',[])->name('dashboard.login');
