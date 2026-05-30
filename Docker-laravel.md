@@ -64,6 +64,24 @@ services:
     networks:
       - laravel
 
+  nginx:
+    image: nginx:latest
+
+    container_name: laravel12_nginx
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./:/var/www/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - app
+
+    networks:
+      - laravel
+
   mysql:
     image: mysql:8.4
 
@@ -73,12 +91,12 @@ services:
 
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: footwear_db
       MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
+      MYSQL_PASSWORD: 123456
 
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
     volumes:
       - mysql_data:/var/lib/mysql
@@ -91,7 +109,6 @@ volumes:
 
 networks:
   laravel:
-
 
   <!-- ----------------------------------------------- -->
 <!-- إنشاء Laravel 12
